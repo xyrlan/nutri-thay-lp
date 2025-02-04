@@ -1,26 +1,132 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --base-apparel-bg: #242121;
+  --base-apparel-bg2: #64554d;
+  --base-apparel-primary1: #a38778;
+  --base-apparel-logo: #e1ddd2;
+  --base-apparel-header: #f2eee2;
+  --base-apparel-neutral: #958e8a;
+}
 
+/* Base styles */
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  @apply bg-white text-gray-900;
+  margin: 0;
+  padding: 0;
+  font-family: "PP Neue Montreal", "Josefin Sans", sans-serif;
+  background-color: var(--base-apparel-bg);
+  color: var(--base-apparel-header);
+  line-height: 1.5;
 }
 
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--base-apparel-primary1);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Form elements */
+input, textarea {
+  font-family: inherit;
+  border: 1px solid var(--base-apparel-primary1);
+  background: transparent;
+  color: var(--base-apparel-header);
+  padding: 1rem;
+  border-radius: 30px;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--base-apparel-header);
+}
+
+/* Container */
 .container {
-  @apply max-w-7xl mx-auto px-4;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-@layer components {
-  .section-title {
-    @apply text-3xl font-bold text-center mb-12;
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .section-padding {
-    @apply py-20;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.overflow-hidden { overflow: hidden; }
+
+/* Section spacing */
+section {
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 0;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

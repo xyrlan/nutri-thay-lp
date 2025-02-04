@@ -5,8 +5,7 @@
     </UContainer>
     
     <main class="min-h-screen">
-      <!-- <LazyHeroSection /> -->
-      <LazyTestSection />
+      <LazyHeroSection />
       <LazyAboutSection />
       <LazyPlansSection />
       <LazyWaitlistSection />

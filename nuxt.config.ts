@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-02-04',
+  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/ui'],
   components: [
     {
       path: '~/components',
@@ -19,7 +18,11 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Nutricionista especializada em nutrição comportamental' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { 
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap'
+        }
       ]
     }
   }
