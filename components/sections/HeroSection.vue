@@ -342,21 +342,21 @@ function gsapAnimationMobile() {
 /* Ajuste os paths das fontes conforme sua estrutura */
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("@/assets/fonts/PPNeueMontreal-Medium.otf") format("opentype");
+  /* src: url("@/assets/fonts/PPNeueMontreal-Medium.otf") format("opentype"); */
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("@/assets/fonts/PPNeueMontreal-Bold.otf") format("opentype");
+  /* src: url("@/assets/fonts/PPNeueMontreal-Bold.otf") format("opentype"); */
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("@/assets/fonts/PPNeueMontreal-Book.otf") format("opentype");
+  /* src: url("@/assets/fonts/PPNeueMontreal-Book.otf") format("opentype"); */
   font-style: normal;
   font-weight: 400;
 }
@@ -395,7 +395,7 @@ function gsapAnimationMobile() {
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-bottom: calc((120 / 16) * 1rem);
+  margin-bottom: calc((70 / 16) * 1rem);
   position: relative;
 }
 
