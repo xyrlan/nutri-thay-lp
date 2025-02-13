@@ -210,10 +210,108 @@ function gsapAnimationDesktop() {
 }
 
 function gsapAnimationMobile() {
-  // Caso deseje outras animações específicas para mobile,
-  // ajuste ou reaproveite parte do Desktop.
-  console.log('Rodando animação Mobile');
+  const mq = window.matchMedia("(max-width: 900px)");
+
+    if (mq.matches) {
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector(".ml12");
+        textWrapper.innerHTML = textWrapper.textContent.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
+        var textWrapper2 = document.querySelector(".ml13");
+        textWrapper2.innerHTML = textWrapper2.textContent.replace(
+          /\S/g,
+          "<span class='letter'>$&</span>"
+        );
+
+    anime.timeline().add({
+            targets: ".ml12 .letter",
+            translateY: [60, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 2000,
+            delay: (el, i) => 1000 + 60 * i,
+          });
+
+    anime.timeline().add({
+            targets: ".ml13 .letter",
+            translateY: [60, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 2000,
+            delay: (el, i) => 1250 + 60 * i,
+          });
+    }
+    
+      gsap.fromTo(".base-apparel-logo-circle", {
+        scale: 0,
+        opacity: 0,
+      }, {
+        scale: 1,
+        opacity: 1,
+        duration: 4.2,
+        ease: Expo.easeOut,
+        delay: 0,
+      });
+    
+    
+      gsap.fromTo(".base-apparel-body > p > span", {
+        y: 40,
+        opacity: 0,
+      }, {
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+        duration: 1.4,
+        delay: 5,
+        stagger: 0.2, 
+      });
+    
+      gsap.fromTo("h2 > span", {
+        opacity: 0,
+      }, {
+        opacity: 1,
+        ease: Expo.easeInOut,
+        duration: 2.5,
+        delay: 3,
+        stagger: 0.4, 
+      });
+
+    gsap.fromTo(".base-apparel-right", {
+        opacity: 0, 
+      }, {
+        opacity: .3,
+        duration: 3,
+        ease: Expo.easeInOut,
+        delay: 0.4,
+      });
+
+      gsap.fromTo(".base-apparel-body form", {
+        width: "105px",
+        opacity: 0,
+      }, {
+        width: "100%",
+        opacity: 1,
+        ease: "power4.out",
+        duration: 2,
+        delay: 5.8,
+      });
+      
+      gsap.fromTo(".base-apparel-body form input", {
+        y: 60,
+        opacity: 0,
+      }, {
+        y: 0,
+        opacity: 1,
+        ease: "power4.out",
+        duration: 2,
+        delay: 6.2,
+      });
 }
+
 </script>
 
 <template>
@@ -245,10 +343,8 @@ function gsapAnimationMobile() {
               <tspan class="textto">E</tspan>
             </text>
           </svg>
-          <br />
-          <span>SUA RELAÇÃO COM</span>
-          <br />
-          <span>A ALIMENTAÇÃO</span>
+          <span>SUA RELAÇÃO COM A ALIMENTAÇÃO</span>
+          <span></span>
         </h2>
 
         <p>
@@ -636,6 +732,11 @@ function gsapAnimationMobile() {
     display: inline;
   }
 
+  .base-apparel-body > h2 > span {
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
   .base-apparel-body form button {
     background: transparent;
     width: calc((90 / 16) * 1rem);
@@ -653,7 +754,7 @@ function gsapAnimationMobile() {
 
 @media only screen and (max-width: 450px) {
   .base-apparel-body .text text {
-    font-size: 15vw;
+    font-size: 4vw;
   }
 
   .base-apparel-body form {

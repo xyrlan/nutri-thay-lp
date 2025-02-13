@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Nutricionista especializada em nutrição comportamental' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
         { 
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap'
